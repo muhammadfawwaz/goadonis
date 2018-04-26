@@ -1,0 +1,16 @@
+@layout('main');
+@section('content')
+    <h1>Wlkam to mobail lejen</h1>
+    @if(old('notification')) 
+        <div class="alert alert-danger">
+            {{ old('notification') }}
+        </div>
+    @endif
+    @each(post in posts)
+    <ul class='list-group'>
+        <li class='list-group-item'><a href="/post/{{ post.id }}">{{ post.title }}</a></li>
+        <li class='list-group-item'>{{ post.desc }}</li>
+        <br>
+    </ul>
+    @endeach
+@endsection
